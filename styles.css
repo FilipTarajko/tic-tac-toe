@@ -1,0 +1,51 @@
+:root{
+    --redMod: -30;
+    --greenMod: 0;
+    --blueMod: 30;
+    --c1: rgb(140,170,200);
+    --c2: rgb(100, 130, 160);
+    --c3: rgb(80, 110, 140);
+    --c4: rgb(60, 90, 120);
+}
+
+.grid {
+    margin: 30px;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cell {
+    font-size: 140px;
+    margin: 5px;
+    padding: 0px 20px 0px 20px;
+    width: 100px;
+    height: 150px;
+    background-color: #ccc;
+}
+
+body{
+    background-color: var(--c2);
+}
+
+#mainContainer{
+    padding: 10px;
+    margin: auto;
+    width: 520px;
+    background-color: var(--c4);
+    height: 850px;
+}
+
+#title{
+    text-align: center;
+    font-size: 105px;
+    padding: 12px 0px 12px 0px;
+    background-color: var(--c3);
+}
+
+#content{
+    padding: 5px;
+    background-color: var(--c1);
+    margin-top: 11px;
+    height: 690px;
+}
