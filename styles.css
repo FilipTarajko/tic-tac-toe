@@ -2,14 +2,15 @@
     --redMod: -30;
     --greenMod: 0;
     --blueMod: 30;
-    --c1: rgb(140,170,200);
-    --c2: rgb(100, 130, 160);
-    --c3: rgb(80, 110, 140);
-    --c4: rgb(60, 90, 120);
+    --c1: rgb(160, 190, 220);
+    --c2: rgb(130, 160, 190);
+    --c3: rgb(100, 130, 160);
+    --c4: rgb(70, 100, 130);
+    --c5: rgb(40, 70, 100);
 }
 
-.grid {
-    margin: 30px;
+#grid {
+    margin: 15px;
     display: grid;
     grid-gap: 1px;
     grid-template-columns: repeat(3, 1fr);
@@ -19,33 +20,33 @@
     font-size: 140px;
     margin: 5px;
     padding: 0px 20px 0px 20px;
-    width: 100px;
+    width: 150px;
     height: 150px;
-    background-color: #ccc;
+    background-color: var(--c2);
 }
 
 body{
-    background-color: var(--c2);
+    background-color: var(--c3);
 }
 
 #mainContainer{
     padding: 10px;
     margin: auto;
     width: 520px;
-    background-color: var(--c4);
-    height: 850px;
+    background-color: var(--c5);
+    height: 680px;
 }
 
 #title{
     text-align: center;
     font-size: 105px;
     padding: 12px 0px 12px 0px;
-    background-color: var(--c3);
+    background-color: var(--c4);
 }
 
 #content{
     padding: 5px;
     background-color: var(--c1);
     margin-top: 11px;
-    height: 690px;
+    height: 510px;
 }
