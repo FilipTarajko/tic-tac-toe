@@ -34,7 +34,15 @@ body{
     margin: auto;
     width: 520px;
     background-color: var(--c5);
-    height: 780px;
+    height: 765px;
+}
+
+#mainContainerBigger{
+    padding: 10px;
+    margin: auto;
+    width: 520px;
+    background-color: var(--c5);
+    height: 815px;
 }
 
 #display{

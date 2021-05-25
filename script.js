@@ -1,4 +1,5 @@
 let display = document.querySelector('#display')
+let mainContainer = document.querySelector('#mainContainer')
 let startMessage = "Press any cell to start!"
 let turn = 1;
 let gameOver = false;
@@ -6,6 +7,7 @@ let player1cells = Array[5];
 let player2cells = Array[4];
 let player1Message = "Player1's turn!"
 let player2Message = "Player2's turn!"
+let restartInfoMessage = "Press any cell to restart."
 display.textContent = startMessage
 const contentGrid = document.querySelector("#grid");
 cells = document.querySelectorAll('.cell')
@@ -14,12 +16,8 @@ cells.forEach((cell)=>{
 });
 
 function buttonPress(e){
-    console.log("17")
-    console.log("textcontent? "+e.target.textContent)
-    console.log("gameover? "+gameOver)
     if(e.target.textContent=="" && !(gameOver))
     {
-        console.log("20")
         if(turn%2==1)
         {
             e.target.textContent = ('X');
@@ -33,10 +31,13 @@ function buttonPress(e){
             testForWin('O')
         }
     }
+    else if(gameOver)
+    {
+        resetGame();
+    }
 }
 
 function testForWin(char){
-    console.log(turn);
     for(let i=0;i<3;i++)
     {
         if(cells[3*i+0].textContent==char&&cells[3*i+1].textContent==char&&cells[3*i+2].textContent==char ||
@@ -54,7 +55,6 @@ function testForWin(char){
     }
     if(turn==9)
     {
-        console.log("54")
         tieGame();
     }
     turn+=1;
@@ -62,21 +62,25 @@ function testForWin(char){
 
 function winGame()
 {
-    display.textContent = (turn%2==1 ? 'Player1' : 'Player2') + " won!";
-    console.log("winGame")
+    display.textContent = (turn%2==1 ? 'Player1' : 'Player2') + " won! "+restartInfoMessage;
     gameOver = true;
+    mainContainer.id = 'mainContainerBigger'
 }
 
 function tieGame()
 {
-    display.textContent = "Tie!";
-    console.log("tieGame")
+    display.textContent = "Tie! "+restartInfoMessage;
     gameOver = true;
+    mainContainer.id = 'mainContainerBigger'
 }
 
 function resetGame(){
     cells.forEach((cell)=>
     {
-        cell.textContent = " ";
+        cell.textContent = "";
     })
+    turn = 1;
+    gameOver = false;
+    mainContainer.id = 'mainContainer'
+    display.textContent = startMessage;
 }
